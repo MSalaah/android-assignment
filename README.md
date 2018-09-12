@@ -21,7 +21,7 @@ There are no specifications for this screen. Be creative and display the informa
 ### Information Source
 We included a kotlin lib module that provides fake wifis, use `FakeWiFiProvider` to populate the list.
 
-**Nice to have**
+## **Nice to have**
 
 Implement your own `WifiProvider`.
 ```
