@@ -1,33 +1,38 @@
 package com.instabridge.wifiprovider
 
-import android.support.v4.content.LocalBroadcastManager
+import android.os.CountDownTimer
 import java.util.*
+import java.util.concurrent.TimeUnit
 
-class FakeWiFiProvider(numberOfWifis: Int = 100) : WiFiProvider {
-    private var fakeWiFis : List<WiFi>
+class FakeWiFiProvider(private val wifiProvider: WifiProvider) : WifiComponent {
 
-    init {
-        if (numberOfWifis <= 0) throw IllegalArgumentException("number of wifis should be higher than 0")
-        fakeWiFis = generateFakeWiFis(numberOfWifis)
+    private val countDownTimer = object : CountDownTimer(Long.MAX_VALUE, TimeUnit.SECONDS.toMillis(5)) {
+        override fun onFinish() {
+            cancel()
+        }
+
+        override fun onTick(p0: Long) {
+            if (Random().nextBoolean()) {
+                wifiProvider.onInRangeUpdate(generateFakeWiFis(Random().nextInt(10)))
+            } else {
+                wifiProvider.onNearbyUpdate(generateFakeWiFis(Random().nextInt(10)))
+            }
+        }
     }
 
-    override fun inRangeWiFis(): List<WiFi> {
-        return fakeWiFis.filter { it.isInRange }
+    override fun start() {
+        countDownTimer.start()
     }
 
-    override fun nearbyWiFis(): List<WiFi> {
-        return fakeWiFis.filter { !it.isInRange }
-    }
-
-    override fun updateWiFi(): Collection<WiFi> {
-        return fakeWiFis.shuffled().take(1)
+    override fun stop() {
+        countDownTimer.onFinish()
     }
 
     private fun generateFakeWiFis(numberOfWifis: Int) : List<WiFi> {
         val list = mutableListOf<WiFi>()
 
         for (i in 1..numberOfWifis) {
-            list.add(WiFi(UUID.randomUUID().toString(), UUID.randomUUID().toString(), Random().nextBoolean()))
+            list.add(WiFi(UUID.randomUUID().toString(), UUID.randomUUID().toString()))
         }
 
         return list
