@@ -17,7 +17,7 @@ The main idea of the list screen is to display 2 groups of wifis: the **in range
 * Whenever the _SHOW MORE_ button is clicked, append 3 more items (at most) to that group.
 
 ### Detail Screen
-There are no specifications for this screen. Be creative and display the information you feel more adequate.
+There are no specifications for this screen. Be creative and display the information you feel is most relevant.
 
 ### Information Source
 We included a library that provides fake wifis, use the `FakeWiFiProvider` to populate the list.
@@ -35,8 +35,8 @@ interface WifiProvider {
 - Provide data from an external source (e.g. read the information from a file ) in the method `onNearbyUpdate`.
 
 ## Notes
-- You shouldn't spend more than 8 hours in this assignment.
-- Submit your solution with a brief description on how did you tackle the problem and if you skipped some requirements or did any assumption please mention the reasons.
+- You shouldn't spend more than 8 hours on this assignment.
+- Submit your solution with a brief description on how you tackled the problem and if you skipped some requirements or made any assumptions please mention them.
 
 Have fun!
 
