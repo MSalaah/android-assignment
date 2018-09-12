@@ -1,10 +1,9 @@
 # Android Assignment
-The goal of this test is to check how much you know about object oriented principles, the Android framework, 
+The goal of this test is to check how much you know about object oriented principles, Android framework, 
 design patterns and how you approach a problem and present its solution.
 
 ## Description
-Write an android application that displays a list of wifis, when you click on any of the items it will open another screen 
-showing the details of the selected wifi.
+Write an android application that displays a list of wifis, when you click on any of the items it should show the details of the selected wifi.
 
 ![Mockup](https://github.com/Instabridge/android-assignment/blob/master/images/mock.png)
 
@@ -20,11 +19,11 @@ The main idea of the list screen is to display 2 groups of wifis: the **close by
 There are no specifications for this screen. Be creative and display the information you feel is most relevant.
 
 ### Information Source
-We included a library that provides fake wifis. Use the `FakeWiFiProvider` to populate the list.
+We included a kotlin lib module that provides fake wifis, use `FakeWiFiProvider` to populate the list.
 
 **Nice to have**
 
-Implement a real `WifiProvider`.
+Implement your own `WifiProvider`.
 ```
 interface WifiProvider {
     fun onCloseByUpdate(items: List<WiFi>)
