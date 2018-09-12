@@ -12,10 +12,11 @@ class FakeWiFiProvider(private val wifiProvider: WifiProvider) : WifiComponent {
         }
 
         override fun onTick(p0: Long) {
-            if (Random().nextBoolean()) {
-                wifiProvider.onInRangeUpdate(generateFakeWiFis(Random().nextInt(10)))
+            val random = Random()
+            if (random.nextBoolean()) {
+                wifiProvider.onCloseByUpdate(generateFakeWiFis(random.nextInt(10)))
             } else {
-                wifiProvider.onNearbyUpdate(generateFakeWiFis(Random().nextInt(10)))
+                wifiProvider.onFarAwayUpdate(generateFakeWiFis(random.nextInt(10)))
             }
         }
     }
@@ -32,7 +33,7 @@ class FakeWiFiProvider(private val wifiProvider: WifiProvider) : WifiComponent {
         val list = mutableListOf<WiFi>()
 
         for (i in 1..numberOfWifis) {
-            list.add(WiFi(UUID.randomUUID().toString(), UUID.randomUUID().toString()))
+            list.add(WiFi(UUID.randomUUID().toString()))
         }
 
         return list
