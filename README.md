@@ -18,7 +18,7 @@ The main idea of the list screen is to display 2 groups of wifis. The from the f
 * Whenever the _SHOW MORE_ button is clicked, append 3 more items (at most) to that group
 
 ### Detail Screen
-There are no specifications for this screen. Be creative and display the information you feel adequate.
+There are no specifications for this screen. Be creative and display the information you feel more adequate.
 
 ### Information Source
 We provided a library that displays fake wifis. You can use it at the beginning to speed up your development.
