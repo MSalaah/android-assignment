@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Instabridge Test</string>
+    <string name="api_key">AIzaSyAArExIsGeEQCTUej49NR_-GmXeMrJC5IU</string>
+    <string name="close_by">WiFis close by</string>
+    <string name="further_away">WiFis further away</string>
+    <string name="fake_list_fragment">Fake List Fragment</string>
+    <string name="no_items">No Items To Append</string>
+    <string name="real_list_fragment">Real List Fragment</string>
+    <string name="name">Name</string>
+    <string name="frequency">Frequency</string>
+    <string name="bssid">BSSID</string>
+    <string name="details_fragment">DetailsFragment</string>
+    <string name="no_data">No Data</string>
+    <string name="show_more">Show More</string>
+    <string name="location_service">Please Open Location Service</string>
+    <string name="cant_get_scan_results">Can\'t get scan results</string>
+
+</resources>
